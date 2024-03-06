@@ -2,8 +2,20 @@ const { app, Menu, Tray } = require("electron");
 const config = require("./config.json");
 let tray = null;
 
+function checkIfIconExists(path) {
+  try {
+    require("fs").accessSync(path);
+    return path;
+  } catch (e) {
+    return null;
+  }
+}
+
 app.whenReady().then(() => {
-  tray = new Tray("icon.png");
+  tray = new Tray(
+    checkIfIconExists("./resources/app/traylinks/icon.png") ||
+      checkIfIconExists("./traylinks/icon.png")
+  );
 
   const websites = config.menuItems;
 
@@ -18,6 +30,21 @@ app.whenReady().then(() => {
             },
           }
     ),
+    { type: "separator" },
+    {
+      label: "Open Config Folder",
+      click: () => {
+        // Open current folder in explorer
+        require("child_process").exec("start traylinks");
+      },
+    },
+    {
+      label: "Reload Config",
+      click: () => {
+        app.relaunch();
+        app.quit();
+      },
+    },
     { type: "separator" },
     {
       label: "Exit",

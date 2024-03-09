@@ -34,8 +34,8 @@ app.whenReady().then(() => {
     {
       label: "Open Config Folder",
       click: () => {
-        // Open current folder in explorer
-        require("child_process").exec("start traylinks");
+        // Open config folder in explorer
+        require("child_process").exec("start .\\resources\\app\\traylinks");
       },
     },
     {

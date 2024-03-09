@@ -1,6 +1,16 @@
 {
   "menuItems": [
-    { "name": "Website 1", "url": "https://www.website1.com" },
+    { "name": "[Web Search] Google", "url": "https://www.google.com" },
+    { "name": "[Web Search] Bing", "url": "https://www.bing.com" },
+    { "name": "[Web Search] Yahoo", "url": "https://www.yahoo.com" },
+    { "type": "separator" },
+    { "name": "[Social Networks] Reddit", "url": "https://www.reddit.com" },
+    { "name": "[Social Networks] Facebook", "url": "https://www.facebook.com" },
+    { "name": "[Social Networks] Twitter", "url": "https://www.instagram.com" },
+    { "type": "separator" },
+    { "name": "[News] CNN", "url": "https://www.cnn.com" },
+    { "name": "[News] BBC", "url": "https://www.bbc.com" },
+    { "name": "[News] Fox News", "url": "https://www.foxnews.com" },
     { "type": "separator" },
     { "name": "Website 2", "url": "https://www.website2.com" },
     { "name": "Website 3", "url": "https://www.website3.com" }
